@@ -2,63 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shah Fahad | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <div class="logo">Fahad</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn">Contact Me</a>
+    </nav>
+  </header>
+
   <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Hi, I'm Shah Fahad 👋</h1>
-    <p>Software Engineering Student | Flutter Developer | AI Enthusiast</p>
-    <a href="#projects" class="btn">View My Work</a>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="profile.jpg" alt="Shah Fahad" class="hero-img">
+      <h1>Shah Fahad</h1>
+      <p>A Creative Freelancer & Full Stack Developer</p>
+    </div>
+    <div class="scroll-down">Scroll Down ⬇️</div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="about" id="about">
     <h2>About Me</h2>
-    <p>
-      I am a Software Engineering student passionate about building mobile and web
-      applications using Flutter, Firebase, and modern web technologies.
-    </p>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Flutter & Dart</li>
-      <li>Firebase</li>
-      <li>HTML, CSS, JavaScript</li>
-      <li>C++ & Java</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>MUHAFIZ – Women Safety App</h3>
-      <p>Emergency alerts, fake call feature, and live location sharing.</p>
-      <a href="#">GitHub</a>
+    <div class="about-container">
+      <img src="profile.jpg" alt="Shah Fahad" class="about-img">
+      <div class="about-text">
+        <p>Hello! I'm Shah Fahad, a Software Engineering student passionate about building mobile and web applications using Flutter, Firebase, and modern web technologies. I love creating responsive, interactive, and modern websites.</p>
+        <ul class="personal-info">
+          <li><strong>Name:</strong> Shah Fahad</li>
+          <li><strong>Age:</strong> 22</li>
+          <li><strong>Phone:</strong> +92 300 0000000</li>
+          <li><strong>Address:</strong> Pakistan</li>
+          <li><strong>Experience:</strong> 3 Years</li>
+          <li><strong>Freelance:</strong> Available</li>
+        </ul>
+        <a href="#" class="btn">Download CV</a>
+      </div>
     </div>
-
-    <div class="project-card">
-      <h3>LMS Android App</h3>
-      <p>Learning Management System with courses and assignments.</p>
-      <a href="#">GitHub</a>
-    </div>
-
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: shahfahad@email.com</p>
-    <p>GitHub: github.com/shahfahad</p>
-    <p>LinkedIn: linkedin.com/in/shahfahad</p>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <h2>My Services</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <h3>Creative Design</h3>
+        <p>Designing beautiful, modern, and responsive websites and mobile apps.</p>
+      </div>
+      <div class="service-card">
+        <h3>Branding</h3>
+        <p>Creating consistent brand identity and digital presence for businesses.</p>
+      </div>
+      <div class="service-card">
+        <h3>User Interface</h3>
+        <p>Building user-friendly interfaces with great experience and functionality.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
