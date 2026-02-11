@@ -1,23 +1,66 @@
-// 1. Scroll Reveal Logic
-const revealElements = () => {
-    const reveals = document.querySelectorAll('.reveal');
+// Reveal Animation
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
     reveals.forEach(el => {
         const windowHeight = window.innerHeight;
         const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-            el.classList.add('active');
+
+        if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
         }
     });
-};
+}
 
-window.addEventListener('scroll', revealElements);
-window.addEventListener('load', revealElements); // Initial check
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-// 2. Subtle Image Tilt Effect
-const heroImage = document.querySelector('.hero-image img');
-document.addEventListener('mousemove', (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 30;
-    if(heroImage) heroImage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+
+// Progress Bar Animation
+const skillSection = document.querySelector(".skills");
+const progressBars = document.querySelectorAll(".fill");
+
+let started = false;
+
+window.addEventListener("scroll", () => {
+    const sectionTop = skillSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100 && !started) {
+        progressBars.forEach(bar => {
+            bar.style.width = bar.getAttribute("data-width");
+        });
+        started = true;
+    }
 });
+
+
+// Typing Animation
+const typingElement = document.querySelector(".typing");
+const words = ["Digital Solutions", "Mobile Apps", "Web Applications"];
+let wordIndex = 0;
+let charIndex = 0;
+
+function typeEffect() {
+    if (charIndex < words[wordIndex].length) {
+        typingElement.textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 80);
+    } else {
+        setTimeout(eraseEffect, 1000);
+    }
+}
+
+function eraseEffect() {
+    if (charIndex > 0) {
+        typingElement.textContent =
+            words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 50);
+    } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, 200);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
